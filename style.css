@@ -283,7 +283,7 @@ nav ul li a:hover {
     justify-content: space-between;
     align-items: center;
     padding: 50px 10%;
-    background: white;
+   
     min-height: 100vh;
   }
   .About-us-content {
@@ -315,8 +315,8 @@ nav ul li a:hover {
     width: 400px;
     border-radius: 10px;
   }
-  .Services {
-    background: #DFE2CF;
+  #services {
+    background-color:rgb(230, 220, 210);
     min-height: 100vh;
   }
   .services-grid {
