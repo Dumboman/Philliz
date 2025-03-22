@@ -11,31 +11,35 @@
 <body>
 
     <header class="header-menu">
-        <img src="Pictures/Company-logo.png" alt="Trulli" width="100" height="100">
+      <div class="logo-container">
+        <img src="Pictures/Company-logo.png" class="c-logo" width="100" height="100" alt="Company Logo">
+        <div class="logo-cover"></div>
+      </div>
         <div class="logo">Philliz</div>
         <nav>
-            <ul>
-                <li><a href="#ap">Home</a></li>
-                <li><a href="#review">Reviews</a></li>
-                <li><a href="#About-us">About Us</a></li>
-                <li class="dropdown">
-                    <a href="#services">Services</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Bookkeeping</a></li>
-                        <li><a href="#">Tax Preparation</a></li>
-                        <li><a href="#">Payroll Management</a></li>
-                        <li><a href="#">Financial Reporting</a></li>
-                    </ul>
-                </li>
-                <li><a href="#contact">Contact Us</a></li>
-            </ul>
-        </nav>
+        <ul>
+            <li><a href="#ap">Home</a></li>
+            <li><a href="#review">Reviews</a></li>
+            <li><a href="#About-us">About Us</a></li>
+            <li class="dropdown">
+                <a href="#services">Services</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Bookkeeping</a></li>
+                    <li><a href="#">Tax Preparation</a></li>
+                    <li><a href="#">Payroll Management</a></li>
+                    <li><a href="#">Financial Reporting</a></li>
+                </ul>
+            </li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
+    </nav>
         
     </header>
     <img src="Pictures/Accounting-Picture.jpg" class="ap" id="ap" >
     <div class="apword">
         <div class="slideshow-container" id="word-slideshow">HTML</div>
-        <script src="script.js"></script>
+        <script src="Slideshow.js"></script>
+       <script src="Ap-scroll.js"></script>
     </div> 
     <div class="quotes-wrapper" id="review" >
         <div class="quote-container">
