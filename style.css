@@ -251,6 +251,18 @@ nav ul li a {
     border-radius: 12px;
     background-color: #f9f9f9;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(50px); /* Start position */
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  }
+
+  .quote-container.visible {
+    opacity: 1;
+    transform: translateY(0); /* End position */
+  }
+
+  .quote-container.staggered {
+    transition-delay: 0s;
   }
   
   .quote-container img {
