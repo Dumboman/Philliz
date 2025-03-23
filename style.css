@@ -357,30 +357,53 @@ nav ul li a:hover {
     background-color:rgb(230, 220, 210);
     min-height: 100vh;
   }
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-    gap: 20px;
-    padding-top: 7%;
-  }
-  
-  .service-box {
-    background: white;
+  body.no-scroll {
+    overflow: hidden; /* 🚀 Disables page scrolling */
+}
+
+header {
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f1f1f1;
     text-align: center;
-    transition: transform 0.3s ease;
-  }
-  
-  .service-box:hover {
-    transform: translateY(-5px);
-  }
-  
-  .service-box h3 {
-    margin-bottom: 10px;
-  }
-  
+}
+
+section {
+    padding: 50px;
+    text-align: center;
+}
+
+#scrollable-section {
+    position: relative;
+    height: 100vh; /* Full viewport height */
+    overflow: hidden; /* Prevents external scrolling */
+}
+
+.pages-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 400vh; /* 4 pages */
+    width: 100%;
+    transition: transform 0.8s ease-in-out;
+}
+
+.page {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: white;
+}
+
+.page:nth-child(odd) {
+    background-color: #3498db;
+}
+
+.page:nth-child(even) {
+    background-color: #e74c3c;
+}
   .contact-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
