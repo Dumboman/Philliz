@@ -14,7 +14,7 @@ function scrollToPage(pageIndex, callback = null) {
 
     setTimeout(() => {
         if (callback) callback();
-    }, 600);
+    }, 600); // The timeout here matches the transition duration
 }
 
 // Function to smoothly exit before leaving the section
@@ -59,8 +59,8 @@ let hasScrolledFromPage3 = false; // Track if we started the scroll from Page 3
 document.addEventListener('wheel', function(event) {
     if (!isInScrollableSection || isScrolling) return;
 
+    // Scroll Up from Page 1 (exit upwards)
     if (currentPage === 0 && event.deltaY < 0) {
-        // 🚀 Exit upwards and align at the top
         isScrolling = true;
         scrollToPage(0, () => {
             exitScrollableSection('up');
@@ -68,24 +68,24 @@ document.addEventListener('wheel', function(event) {
         return;
     }
 
+    // Scroll Down from Page 4 (exit downwards)
     if (currentPage === totalPages - 1 && event.deltaY > 0) {
-        // 🚀 Exit downwards smoothly
         exitScrollableSection('down');
         return;
     }
 
-    if (currentPage === totalPages - 1 && !hasScrolledFromPage3 && event.deltaY > 0) {
-        // Check if the user has reached the bottom of Page 3 and trigger the scroll up to Page 1
-        if (window.scrollY + window.innerHeight >= page3Bottom) {
-            isScrolling = true;
-            hasScrolledFromPage3 = true; // Lock to prevent triggering again
-            scrollToPage(0, () => {
-                exitScrollableSection('up');
-            });
-            return;
-        }
+    // Scroll Up from Page 4: Only allow scroll when Page 4 is fully out
+    if (currentPage === totalPages - 1 && event.deltaY < 0) {
+        // Lock scrolling until the page has completely moved out
+        isScrolling = true;
+        scrollToPage(currentPage - 1, () => {
+            currentPage--;
+            isScrolling = false;
+        });
+        return;
     }
 
+    // Scroll Down or Up normally
     isScrolling = true;
 
     if (event.deltaY > 0) {
@@ -94,7 +94,7 @@ document.addEventListener('wheel', function(event) {
         currentPage = Math.max(currentPage - 1, 0);
     }
 
-    // Correct full-screen transition
+    // Smooth scroll transition
     scrollToPage(currentPage, () => {
         isScrolling = false;
     });
