@@ -15,28 +15,39 @@ body {
     transform: translateX(-50%);
     width: 80%; /* Reducing width for a more compact look */
     max-width: 1000px; /* Prevents it from being too wide on large screens */
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.8); /* Translucent white */
     padding: 10px 20px; /* Reduced padding for a shorter look */
     border-radius: 20px; /* Soft rounded edges */
     z-index: 1000;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease-in-out;
+    backdrop-filter: blur(10px); /* Adds a subtle blur effect */
 }
 
-/* Logo container */
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 .logo-container {
   display: flex;
   align-items: center;
-  gap: 0; /* No space at all */
-  padding: 0;
-  margin: 0;
+  position: relative;
+  overflow: hidden; /* Ensures no overflow when the logo moves */
 }
 
-/* Logo Image */
 .c-logo {
   width: 50px; /* Adjust as needed */
   height: auto;
   margin-right: -5px; /* Negative margin to pull it closer */
+  position: relative;
+  animation: slideUp 0.8s ease-out forwards;
 }
 
 /* Company name "Philliz" */
@@ -64,7 +75,7 @@ nav ul li {
     position: relative;
     opacity: 0;
     transform: translateY(-10px); /* Subtle slide-in effect */
-    animation: slideIn 0.5s forwards ease-out;
+    animation: slideIn 1s forwards ease-out;
 }
 
 /* Staggered animation delays */
@@ -86,19 +97,30 @@ nav ul li:nth-child(5) { animation-delay: 1s; }
 }
 
 nav ul li a {
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 16px; /* Slightly smaller font for compact design */
-    color: black;
-    font-family: Roboto, sans-serif;
-    padding: 8px 12px;
-    border-radius: 8px;
-    transition: background 0.3s ease-in-out, color 0.3s;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px; /* Slightly smaller font for compact design */
+  color: black;
+  font-family: Roboto, sans-serif;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: background 0.3s ease-in-out, color 0.3s, transform 0.3s;
+  display: inline-block; /* Ensures transform works properly */
 }
 
 nav ul li a:hover {
-    background: rgb(90, 87, 81);
-    color: white;
+  background: rgb(90, 87, 81);
+  color: white;
+  animation: bounce 0.4s ease-in-out;
+}
+
+@keyframes bounce {
+  0%, 100% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-5px);
+  }
 }
 
 /* Dropdown menu styles */
@@ -263,6 +285,16 @@ nav ul li a:hover {
     color: orange;
   }
   
+  .quote-container:hover {
+    animation: bounce 0.5s ease-in-out;
+}
+
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
   /* Responsive Design */
   @media (max-width: 768px) {
     .quotes-wrapper {
@@ -272,10 +304,6 @@ nav ul li a:hover {
     .quote-container {
       width: 80%;
     }
-  }
-  
-  .checked {
-    color: orange;
   }
   
   .About-us {
