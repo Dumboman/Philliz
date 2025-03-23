@@ -157,17 +157,25 @@ nav ul li a:hover {
     display: block;
 }
 
+.ap {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%; /* Start smaller */
+  height: auto;
+  filter: blur(3px);
+  opacity: 1; /* No fade-in effect */
+  animation: expand 1s ease-in-out forwards;
+}
 
-  
-  .ap {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-    height: auto;
-    filter: blur(3px);
-    opacity: 0;
-    animation: appear 1s ease-in-out forwards;
+/* Keyframes for expansion effect */
+@keyframes expand {
+  from {
+      width: 80%;
+  }
+  to {
+      width: 100%;
+  }
 }
 .apword {
   position: absolute;
@@ -181,16 +189,7 @@ nav ul li a:hover {
   animation: appear 1s ease-in-out 0.5s forwards;
   opacity: 0;
 }
-@keyframes apappear {
-  from {
-      opacity: 0;
-      transform: translateX(-50%) translateY(20px); /* Start slightly lower */
-  }
-  to {
-      opacity: 1;
-      transform: translateX(-50%) translateY(0); /* Move to final position */
-  }
-}
+
 .apword {
   color: black;
   padding: 5px;
