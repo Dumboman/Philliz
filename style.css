@@ -342,6 +342,8 @@ nav ul li a:hover {
     align-items: center;
     padding: 50px 10%;
     min-height: 100vh;
+    background-color:rgb(230, 220, 210);
+    color: #36454F
 }
 
 .About-us-container {
@@ -397,7 +399,7 @@ p {
 
 
   #services {
-    background-color:rgb(230, 220, 210);
+    background-color:rgb(190, 175, 160);
     min-height: 100vh;
   }
   .container {
@@ -426,16 +428,17 @@ p {
 
 .contact-container {
   width: 100%;
-  max-width: 100%;
+  max-width: 95%;
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  background: white;
+  background: rgb(205, 190, 175);
   padding: 40px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   overflow-y: auto;
+  color: rgb(70, 60, 50)
 }
 h2 {
   text-align: center;
@@ -446,6 +449,7 @@ form {
   display: flex;
   flex-direction: column;
   width: 100%;
+  color: rgb(70, 60, 50)
 }
 label {
   font-weight: bold;
@@ -460,7 +464,7 @@ input, textarea {
   font-size: 16px;
 }
 button {
-  background: #ff5722;
+  background: rgb(120, 100, 85);
   color: white;
   padding: 15px;
   border: none;
@@ -471,7 +475,7 @@ button {
   margin-top: 15px;
 }
 button:hover {
-  background: #e64a19;
+  background: rgb(140, 120, 100);
 }
 .success-message {
   display: none;
@@ -482,6 +486,7 @@ button:hover {
 .contact-info {
   text-align: center;
   margin-bottom: 20px;
+  color: rgb(70, 60, 50)
 }
 .contact-info p {
   margin: 5px 0;
@@ -489,4 +494,5 @@ button:hover {
 .contact-info i {
   color: #ff5722;
   margin-right: 8px;
+
 }
