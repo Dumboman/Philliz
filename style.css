@@ -124,6 +124,10 @@ nav ul li a:hover {
 }
 
 /* Dropdown menu styles */
+.dropdown {
+  position: relative;
+}
+
 .dropdown-menu {
   display: none;
   position: absolute;
@@ -136,8 +140,7 @@ nav ul li a:hover {
   border-radius: 8px;
   z-index: 10;
   overflow: hidden;
-  margin-top: 15px;  /* Space above */
-  margin-bottom: 15px; /* Space below */
+  margin-top: 5px; /* Reduced gap to prevent flickering */
 }
 
 .dropdown a {
@@ -146,34 +149,28 @@ nav ul li a:hover {
   gap: 5px; /* Space between 'Services' and the arrow */
 }
 
-/* Arrow style */
+/* Arrow animation */
 .arrow {
   font-size: 12px;
   transition: transform 0.3s ease;
 }
 
-/* Rotate arrow when hovering over Services */
 .dropdown:hover .arrow {
   transform: rotate(180deg);
 }
 
 .dropdown-menu li a {
-    display: block;
-    padding: 8px;
-    font-size: 14px;
-    color: black;
-    text-decoration: none;
-    transition: background 0.3s;
+  display: block;
+  padding: 8px;
+  font-size: 14px;
+  color: black;
+  text-decoration: none;
+  transition: background 0.3s;
 }
 
 .dropdown-menu li a:hover {
-    background: rgb(73, 73, 74);
-    color: white;
-}
-
-/* Show dropdown on hover */
-.dropdown:hover .dropdown-menu {
-    display: block;
+  background: rgb(73, 73, 74);
+  color: white;
 }
 
 
