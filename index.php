@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="Smooth-scoll.js"></script>
+    <script src="Js/Smooth-scoll.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Philliz</title>
 </head>
@@ -30,7 +30,7 @@
                     <li><a href="#">Payroll Management</a></li>
                     <li><a href="#">Financial Reporting</a></li>
                 </ul>
-                <script src="Dropdown.js"></script>
+                <script src="Js/Dropdown.js"></script>
             </li>
             <li><a href="#contact">Lets Contact</a></li>
         </ul>
@@ -40,12 +40,12 @@
     <img src="Pictures/Accounting-Picture.jpg" class="ap" id="ap" >
     <div class="apword">
         <div class="slideshow-container" id="word-slideshow">HTML</div>
-        <script src="Slideshow.js"></script>
-       <script src="Ap-scroll.js"></script>
+        <script src="Js/Slideshow.js"></script>
+       <script src="Js/Ap-scroll.js"></script>
     </div> 
     <div class="quotes-wrapper" id="review" >
         <div class="quote-container">
-          <script src="Review.js"></script>
+          <script src="Js/Review.js"></script>
           <img src="Pictures/Open_inverted.png" alt="Open Quote">
           <div class="quote-content">
             <div class="stars">
@@ -138,19 +138,20 @@
   </div>
     </section>
     <div class="contact-container" id="contact">
+      <form action="connect.php" method="post">
       <h2>Get In Touch With Us</h2>
       <form id="contactForm">
           <label for="name">Name</label>
-          <input type="text" id="name" placeholder="Your Name" required>
+          <input type="text" id="name" placeholder="Your Name" required name="name">
           
           <label for="email">Email</label>
-          <input type="email" id="email" placeholder="Your Email" required>
+          <input type="email" id="email" placeholder="Your Email" required name="email">
           
           <label for="phone">Phone (Optional)</label>
-          <input type="tel" id="phone" placeholder="Your Phone (Optional)">
+          <input type="tel" id="phone" placeholder="Your Phone (Optional)"name="phone">
           
           <label for="message">Message</label>
-          <textarea id="message" placeholder="Your Message" rows="4" required></textarea>
+          <textarea id="message" name="message" placeholder="Your Message" rows="4" required></textarea>
           
           <button type="submit">Send Message</button>
       </form>
