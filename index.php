@@ -138,31 +138,31 @@
   </div>
     </section>
     <div class="contact-container" id="contact">
-      <form action="connect.php" method="post">
-      <h2>Get In Touch With Us</h2>
-      <form id="contactForm">
-          <label for="name">Name</label>
-          <input type="text" id="name" placeholder="Your Name" required name="name">
-          
-          <label for="email">Email</label>
-          <input type="email" id="email" placeholder="Your Email" required name="email">
-          
-          <label for="phone">Phone (Optional)</label>
-          <input type="tel" id="phone" placeholder="Your Phone (Optional)"name="phone">
-          
-          <label for="message">Message</label>
-          <textarea id="message" name="message" placeholder="Your Message" rows="4" required></textarea>
-          
-          <button type="submit">Send Message</button>
-      </form>
-      <p class="success-message" id="successMessage">Thank you! We will get back to you soon. 😊</p>
-      
+    <form id="contactForm" method="post">
+        <h2>Get In Touch With Us</h2>
+        <label for="name">Name</label>
+        <input type="text" id="name" placeholder="Your Name" required name="name">
+
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Your Email" required name="email">
+
+        <label for="phone">Phone (Optional)</label>
+        <input type="tel" id="phone" placeholder="Your Phone (Optional)" name="phone">
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Your Message" rows="4" required></textarea>
+
+        <button type="submit">Send Message</button>
+    </form>
+    <p class="success-message" id="successMessage" style="display:none;">Thank you! We will get back to you soon. 😊</p>
+
+    <script src="Js/Contactus.js"></script>
+</div>
       <div class="contact-info">
           <p><i class="fas fa-phone"></i> 484.324.2400</p>
           <p><i class="fas fa-envelope"></i> info@mediaproper.com</p>
           <p><i class="fas fa-map-marker-alt"></i> 15 West 3rd St, Media, PA 19063</p>
       </div>
-  </div>
 
   <script>
       document.getElementById("contactForm").addEventListener("submit", function(event) {

@@ -1,9 +1,8 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color:rgb(213, 199, 188) ;
-  }
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: rgb(213, 199, 188);
+}
 
   .header-menu {
     display: flex;
@@ -179,7 +178,7 @@ nav ul li a:hover {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 80%; /* Start smaller */
+  width:min(1000px, 80%); /* Start smaller */
   height: auto;
   filter: blur(3px);
   opacity: 1; /* No fade-in effect */
@@ -204,7 +203,7 @@ nav ul li a:hover {
   color: rgb(103, 129, 7);
   font-weight: bold;
   font-size: 400%;
-  animation: appear 1s ease-in-out 0.5s forwards;
+  animation: apappear 1s ease-in-out 0.5s forwards;
   opacity: 0;
 }
 @keyframes apappear {
